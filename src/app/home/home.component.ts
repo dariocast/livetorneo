@@ -11,6 +11,7 @@ import {PartiteService} from '../partite.service';
 export class HomeComponent implements OnInit {
 
   partite: Observable<Partita[]>;
+  private selezionata: Partita;
 
   constructor(public partiteService: PartiteService) {
     this.partite = partiteService.getPartite();
@@ -18,4 +19,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSelect(partita: Partita) {
+    this.selezionata = partita;
+
+  }
 }

@@ -7,15 +7,18 @@ import {MaterialModule} from './material-module';
 import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { DettaglioComponent } from './dettaglio/dettaglio.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+  { path: 'dettaglio', component: DettaglioComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    DettaglioComponent
   ],
   imports: [
     BrowserModule,
