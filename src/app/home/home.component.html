@@ -1,0 +1,3 @@
+<mat-card style="margin: 5px" *ngFor="let partita of partite | async">
+  <mat-card-title>{{partita.squadraUno}} <span style="color: red"> {{partita.golSquadraUno}} : {{partita.golSquadraDue}}</span> {{partita.squadraDue}}</mat-card-title>
+</mat-card>
