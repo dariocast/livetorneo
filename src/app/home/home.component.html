@@ -1,7 +1,13 @@
-<mat-card style="margin: 5px" *ngFor="let partita of partite | async"
-          [class.selected]="partita === selezionata"
-          (click)="onSelect(partita)">
-  <mat-card-title>{{partita.squadraUno}} <span style="color: red"> {{partita.golSquadraUno}} : {{partita.golSquadraDue}}</span> {{partita.squadraDue}}</mat-card-title>
-</mat-card>
-<app-dettaglio [partita]="selezionata"></app-dettaglio>
-
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let partita of partite | async" [class.selected]="partita === selezionata" (click)="onSelect(partita)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{partita.squadraUno}} - {{partita.squadraDue}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{partita.golSquadraUno}}:{{partita.golSquadraDue}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-dettaglio [partita]="selezionata"></app-dettaglio>
+  </mat-expansion-panel>
+</mat-accordion>

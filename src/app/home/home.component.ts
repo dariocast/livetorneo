@@ -11,7 +11,7 @@ import {PartiteService} from '../partite.service';
 export class HomeComponent implements OnInit {
 
   partite: Observable<Partita[]>;
-  private selezionata: Partita;
+  public selezionata: Partita;
 
   constructor(public partiteService: PartiteService) {
     this.partite = partiteService.getPartite();

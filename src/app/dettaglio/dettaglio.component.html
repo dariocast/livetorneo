@@ -1,6 +1,23 @@
-<div *ngIf="partita">
-
-  <h2>{{partita._id}} Dettaglio</h2>
-  <div><span>squadra uno: </span>{{partita.squadraUno}}</div>
-  <div><span>squadra due: </span>{{partita.squadraDue}}</div>
-</div>
+<mat-list *ngIf="partita" dense>
+  <h3 matSubheader>Marcatori</h3>
+  <mat-list-item *ngFor="let marcatore of partita.marcatori">
+    <img *ngIf="!marcatore.giocatore.includes('Aut)'); else autogol " src="assets/golFatto.png" matListIcon alt="gol fatto"/>
+    <ng-template #autogol><img src="assets/autogol.png" matListIcon alt="gol fatto"/></ng-template>
+    <h4 matLine>{{marcatore.giocatore}}</h4>
+    <p matLine> {{marcatore.squadra}} </p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <h3 matSubheader>Ammoniti</h3>
+  <mat-list-item *ngFor="let ammonito of partita.ammoniti">
+    <img src="assets/ammonito.png" matListIcon alt="ammonito"/>
+    <h4 matLine>{{ammonito.giocatore}}</h4>
+    <p matLine> {{ammonito.squadra}} </p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <h3 matSubheader>Espulsi</h3>
+  <mat-list-item *ngFor="let espulso of partita.espulsi">
+    <img src="assets/espulso.png" matListIcon alt="espulso"/>
+    <h4 matLine>{{espulso.giocatore}}</h4>
+    <p matLine> {{espulso.squadra}} </p>
+  </mat-list-item>
+</mat-list>
