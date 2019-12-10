@@ -10,17 +10,24 @@ import {PartiteService} from '../partite.service';
 })
 export class HomeComponent implements OnInit {
 
+  constructor(public partiteService: PartiteService) {
+    this.partite = partiteService.getPartite();
+  }
+
   partite: Observable<Partita[]>;
   public selezionata: Partita;
 
-  constructor(public partiteService: PartiteService) {
-    this.partite = partiteService.getPartite();
+  isToday(someDate: number) {
+    const today = new Date();
+    const thatDate = new Date(someDate * 1000);
+    return thatDate.getDate() == today.getDate() &&
+      thatDate.getMonth() == today.getMonth() &&
+      thatDate.getFullYear() == today.getFullYear();
   }
   ngOnInit() {
   }
 
   onSelect(partita: Partita) {
     this.selezionata = partita;
-
   }
 }

@@ -1,4 +1,4 @@
-<mat-accordion>
+<mat-accordion class="example-headers-align">
   <mat-expansion-panel *ngFor="let partita of partite | async" [class.selected]="partita === selezionata" (click)="onSelect(partita)">
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -6,6 +6,8 @@
       </mat-panel-title>
       <mat-panel-description>
         {{partita.golSquadraUno}}:{{partita.golSquadraDue}}
+        <span *ngIf="isToday(partita.data); else finita" class="live-event">live</span>
+        <ng-template #finita><span class="ended-event">terminata</span></ng-template>
       </mat-panel-description>
     </mat-expansion-panel-header>
     <app-dettaglio [partita]="selezionata"></app-dettaglio>

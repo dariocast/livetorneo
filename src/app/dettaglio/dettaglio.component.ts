@@ -7,6 +7,7 @@ import {Partita} from '../objects/partita';
   styleUrls: ['./dettaglio.component.css']
 })
 export class DettaglioComponent implements OnInit, OnChanges {
+
   @Input()  partita: Partita;
   public data: string;
 
@@ -18,7 +19,7 @@ export class DettaglioComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     if (this.partita) {
-      const data = new Date(this.partita.data);
+      const data = new Date(this.partita.data*1000);
       this.data = data.getDate() + '-' + data.getMonth() + '-' + data.getFullYear();
     }
   }

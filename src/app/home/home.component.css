@@ -1,0 +1,36 @@
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ended-event {
+  font-size: x-small;
+  color: gray;
+  border: solid thin gray;
+  padding: 3px 5px 3px 5px;
+}
+
+.live-event {
+  font-size: x-small;
+  color: red;
+  border: solid thin red;
+  padding: 3px 5px 3px 5px;
+  animation:blinkingText 1s infinite alternate;
+  -webkit-animation:blinkingText 0.8s infinite alternate;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes blinkingText {
+  0%   {color:red; border-color: red;}
+  100% {color:transparent; border-color: transparent;}
+}
+
+/* Standard syntax */
+@keyframes blinkingText {
+  0%   {color:red; border-color: red;}
+  100% {color:transparent; border-color: transparent;}
+}

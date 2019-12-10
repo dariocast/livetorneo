@@ -1,5 +1,10 @@
-<h4 *ngIf="partita">{{data}}</h4>
 <mat-list *ngIf="partita" dense>
+  <h3 matSubheader>Giocata il</h3>
+  <mat-list-item>
+    <mat-icon matListIcon>calendar_today</mat-icon>
+    <h4 matLine>{{data}}</h4>
+  </mat-list-item>
+  <mat-divider></mat-divider>
   <h3 matSubheader>Marcatori</h3>
   <mat-list-item *ngFor="let marcatore of partita.marcatori">
     <img *ngIf="!marcatore.giocatore.includes('Aut)'); else autogol " src="assets/golFatto.png" matListIcon alt="gol fatto"/>
