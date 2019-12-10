@@ -1,3 +1,4 @@
+<h4 *ngIf="partita">{{data}}</h4>
 <mat-list *ngIf="partita" dense>
   <h3 matSubheader>Marcatori</h3>
   <mat-list-item *ngFor="let marcatore of partita.marcatori">

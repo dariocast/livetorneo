@@ -9,4 +9,5 @@ export interface Partita {
   marcatori: Giocatore[];
   ammoniti: Giocatore[];
   espulsi: Giocatore[];
+  data: number;
 }

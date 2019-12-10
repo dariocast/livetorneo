@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {Partita} from '../objects/partita';
 
 @Component({
@@ -6,12 +6,21 @@ import {Partita} from '../objects/partita';
   templateUrl: './dettaglio.component.html',
   styleUrls: ['./dettaglio.component.css']
 })
-export class DettaglioComponent implements OnInit {
+export class DettaglioComponent implements OnInit, OnChanges {
   @Input()  partita: Partita;
+  public data: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
+    if (this.partita) {
+      const data = new Date(this.partita.data);
+      this.data = data.getDate() + '-' + data.getMonth() + '-' + data.getFullYear();
+    }
   }
 
 }
