@@ -9,20 +9,27 @@
 }
 
 .ended-event {
-  font-size: x-small;
   color: gray;
   border: solid thin gray;
-  padding: 3px 5px 3px 5px;
+}
+
+.preview-event {
+  color: orange;
+  border: solid thin orange;
 }
 
 .live-event {
-  font-size: x-small;
   color: red;
   border: solid thin red;
-  padding: 3px 5px 3px 5px;
   animation:blinkingText 1s infinite alternate;
   -webkit-animation:blinkingText 0.8s infinite alternate;
 }
+
+.event {
+   font-size: x-small;
+   padding: 3px 5px 3px 5px;
+ }
+
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes blinkingText {
   0%   {color:red; border-color: red;}

@@ -30,4 +30,12 @@ export class HomeComponent implements OnInit {
   onSelect(partita: Partita) {
     this.selezionata = partita;
   }
+
+  isPast(data: number) {
+    const today = new Date();
+    const thatDate = new Date(data * 1000);
+    return thatDate.getDate() < today.getDate() ||
+      thatDate.getMonth() < today.getMonth() ||
+      thatDate.getFullYear() < today.getFullYear();
+  }
 }

@@ -6,10 +6,16 @@
       </mat-panel-title>
       <mat-panel-description>
         {{partita.golSquadraUno}}:{{partita.golSquadraDue}}
-        <span *ngIf="isToday(partita.data); else finita" class="live-event">live</span>
-        <ng-template #finita><span class="ended-event">terminata</span></ng-template>
+        <span *ngIf="isToday(partita.data); then live else pastOrFuture"></span>
+        <ng-template #pastOrFuture>
+          <span *ngIf="isPast(partita.data); then finita else preview"></span>
+        </ng-template>
       </mat-panel-description>
     </mat-expansion-panel-header>
     <app-dettaglio [partita]="selezionata"></app-dettaglio>
   </mat-expansion-panel>
 </mat-accordion>
+
+<ng-template #live><span class="event live-event">live</span></ng-template>
+<ng-template #finita><span class="event ended-event">terminata</span></ng-template>
+<ng-template #preview><span class="event preview-event">preview</span></ng-template>
