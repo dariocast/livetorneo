@@ -9,5 +9,8 @@ import {Partita} from './objects/partita';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  navLinks = [
+    { label: 'Live', path: '/live' },
+    { label: 'Classifica', path: '/classifica' }
+  ];
 }

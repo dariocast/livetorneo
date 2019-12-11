@@ -8,17 +8,21 @@ import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { DettaglioComponent } from './dettaglio/dettaglio.component';
+import { ClassificaComponent } from './classifica/classifica.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'dettaglio', component: DettaglioComponent}
+  { path: 'live', component: HomeComponent },
+  { path: 'dettaglio', component: DettaglioComponent },
+  { path: 'classifica', component: ClassificaComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DettaglioComponent
+    DettaglioComponent,
+    ClassificaComponent
   ],
   imports: [
     BrowserModule,
