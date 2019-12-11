@@ -2,59 +2,59 @@
   <mat-tab label="Maschile">
     <mat-card>
       <h1 class="mat-h3">Girone A</h1>
-      <table mat-table [dataSource]="gironeA">
+      <table mat-table matSort [dataSource]="gironeA">
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
 
         <ng-container matColumnDef="squadra">
-          <th mat-header-cell *matHeaderCellDef> Squadra </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Squadra </th>
           <td mat-cell *matCellDef="let squadra">
             <span><img src="{{squadra.logo}}" style="height: 30px;" alt="logo"></span><span style="vertical-align: super !important;">{{squadra.nome}}</span>
           </td>
         </ng-container>
 
         <ng-container matColumnDef="pg">
-          <th mat-header-cell *matHeaderCellDef>Partite giocate</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Partite giocate</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.pg}} </td>
         </ng-container>
 
         <ng-container matColumnDef="v">
-          <th mat-header-cell *matHeaderCellDef>Vittorie</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Vittorie</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.v}} </td>
         </ng-container>
 
         <ng-container matColumnDef="p">
-          <th mat-header-cell *matHeaderCellDef>Pareggi</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Pareggi</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.p}} </td>
         </ng-container>
 
         <ng-container matColumnDef="s">
-          <th mat-header-cell *matHeaderCellDef>Sconfitte</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Sconfitte</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.s}} </td>
         </ng-container>
 
         <ng-container matColumnDef="gf">
-          <th mat-header-cell *matHeaderCellDef>Gol Fatti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gol Fatti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gf}} </td>
         </ng-container>
 
         <ng-container matColumnDef="gs">
-          <th mat-header-cell *matHeaderCellDef>Gol Subiti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gol Subiti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gs}} </td>
         </ng-container>
 
         <ng-container matColumnDef="dg">
-          <th mat-header-cell *matHeaderCellDef>Differenza reti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Differenza reti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gf - squadra.gs}} </td>
         </ng-container>
 
         <ng-container matColumnDef="pt">
-          <th mat-header-cell *matHeaderCellDef>Punti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Punti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.pt}} </td>
         </ng-container>
 
         <ng-container matColumnDef="ultime">
-          <th mat-header-cell *matHeaderCellDef> Ultime tre </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Ultime tre </th>
           <td mat-cell *matCellDef="let squadra">
             <ng-container *ngFor="let res of squadra.ultime">
               <ng-container [ngSwitch]="res">
@@ -72,58 +72,58 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
       <h1 class="mat-h3">Girone B</h1>
-      <table mat-table [dataSource]="gironeB">
+      <table mat-table matSort [dataSource]="gironeB">
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
 
         <ng-container matColumnDef="squadra">
-          <th mat-header-cell *matHeaderCellDef> Squadra </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Squadra </th>
           <td mat-cell *matCellDef="let squadra">
             <span><img src="{{squadra.logo}}" style="height: 30px;" alt="logo"></span><span style="vertical-align: super !important;">{{squadra.nome}}</span>
           </td>        </ng-container>
 
         <ng-container matColumnDef="pg">
-          <th mat-header-cell *matHeaderCellDef>Partite giocate</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Partite giocate</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.pg}} </td>
         </ng-container>
 
         <ng-container matColumnDef="v">
-          <th mat-header-cell *matHeaderCellDef>Vittorie</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Vittorie</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.v}} </td>
         </ng-container>
 
         <ng-container matColumnDef="p">
-          <th mat-header-cell *matHeaderCellDef>Pareggi</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Pareggi</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.p}} </td>
         </ng-container>
 
         <ng-container matColumnDef="s">
-          <th mat-header-cell *matHeaderCellDef>Sconfitte</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Sconfitte</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.s}} </td>
         </ng-container>
 
         <ng-container matColumnDef="gf">
-          <th mat-header-cell *matHeaderCellDef>Gol Fatti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gol Fatti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gf}} </td>
         </ng-container>
 
         <ng-container matColumnDef="gs">
-          <th mat-header-cell *matHeaderCellDef>Gol Subiti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gol Subiti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gs}} </td>
         </ng-container>
 
         <ng-container matColumnDef="dg">
-          <th mat-header-cell *matHeaderCellDef>Differenza reti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Differenza reti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gf - squadra.gs}} </td>
         </ng-container>
 
         <ng-container matColumnDef="pt">
-          <th mat-header-cell *matHeaderCellDef>Punti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Punti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.pt}} </td>
         </ng-container>
 
         <ng-container matColumnDef="ultime">
-          <th mat-header-cell *matHeaderCellDef> Ultime tre </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Ultime tre </th>
           <td mat-cell *matCellDef="let squadra">
             <ng-container *ngFor="let res of squadra.ultime">
               <ng-container [ngSwitch]="res">
@@ -141,58 +141,58 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
       <h1 class="mat-h3">Girone C</h1>
-      <table mat-table [dataSource]="gironeC">
+      <table mat-table matSort [dataSource]="gironeC">
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
 
         <ng-container matColumnDef="squadra">
-          <th mat-header-cell *matHeaderCellDef> Squadra </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Squadra </th>
           <td mat-cell *matCellDef="let squadra">
             <span><img src="{{squadra.logo}}" style="height: 30px;" alt="logo"></span><span style="vertical-align: super !important;">{{squadra.nome}}</span>
           </td>        </ng-container>
 
         <ng-container matColumnDef="pg">
-          <th mat-header-cell *matHeaderCellDef>Partite giocate</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Partite giocate</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.pg}} </td>
         </ng-container>
 
         <ng-container matColumnDef="v">
-          <th mat-header-cell *matHeaderCellDef>Vittorie</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Vittorie</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.v}} </td>
         </ng-container>
 
         <ng-container matColumnDef="p">
-          <th mat-header-cell *matHeaderCellDef>Pareggi</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Pareggi</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.p}} </td>
         </ng-container>
 
         <ng-container matColumnDef="s">
-          <th mat-header-cell *matHeaderCellDef>Sconfitte</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Sconfitte</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.s}} </td>
         </ng-container>
 
         <ng-container matColumnDef="gf">
-          <th mat-header-cell *matHeaderCellDef>Gol Fatti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gol Fatti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gf}} </td>
         </ng-container>
 
         <ng-container matColumnDef="gs">
-          <th mat-header-cell *matHeaderCellDef>Gol Subiti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gol Subiti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gs}} </td>
         </ng-container>
 
         <ng-container matColumnDef="dg">
-          <th mat-header-cell *matHeaderCellDef>Differenza reti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Differenza reti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gf - squadra.gs}} </td>
         </ng-container>
 
         <ng-container matColumnDef="pt">
-          <th mat-header-cell *matHeaderCellDef>Punti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Punti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.pt}} </td>
         </ng-container>
 
         <ng-container matColumnDef="ultime">
-          <th mat-header-cell *matHeaderCellDef> Ultime tre </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Ultime tre </th>
           <td mat-cell *matCellDef="let squadra">
             <ng-container *ngFor="let res of squadra.ultime">
               <ng-container [ngSwitch]="res">
@@ -214,58 +214,58 @@
   <mat-tab label="Femminile">
     <mat-card>
       <h1 class="mat-h3">Girone A</h1>
-      <table mat-table [dataSource]="gironeAF">
+      <table mat-table matSort [dataSource]="gironeAF">
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
 
         <ng-container matColumnDef="squadra">
-          <th mat-header-cell *matHeaderCellDef> Squadra </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Squadra </th>
           <td mat-cell *matCellDef="let squadra">
             <span><img src="{{squadra.logo}}" style="height: 30px;" alt="logo"></span><span style="vertical-align: super !important;">{{squadra.nome}}</span>
           </td>        </ng-container>
 
         <ng-container matColumnDef="pg">
-          <th mat-header-cell *matHeaderCellDef>Partite giocate</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Partite giocate</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.pg}} </td>
         </ng-container>
 
         <ng-container matColumnDef="v">
-          <th mat-header-cell *matHeaderCellDef>Vittorie</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Vittorie</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.v}} </td>
         </ng-container>
 
         <ng-container matColumnDef="p">
-          <th mat-header-cell *matHeaderCellDef>Pareggi</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Pareggi</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.p}} </td>
         </ng-container>
 
         <ng-container matColumnDef="s">
-          <th mat-header-cell *matHeaderCellDef>Sconfitte</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Sconfitte</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.s}} </td>
         </ng-container>
 
         <ng-container matColumnDef="gf">
-          <th mat-header-cell *matHeaderCellDef>Gol Fatti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gol Fatti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gf}} </td>
         </ng-container>
 
         <ng-container matColumnDef="gs">
-          <th mat-header-cell *matHeaderCellDef>Gol Subiti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gol Subiti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gs}} </td>
         </ng-container>
 
         <ng-container matColumnDef="dg">
-          <th mat-header-cell *matHeaderCellDef>Differenza reti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Differenza reti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gf - squadra.gs}} </td>
         </ng-container>
 
         <ng-container matColumnDef="pt">
-          <th mat-header-cell *matHeaderCellDef>Punti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Punti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.pt}} </td>
         </ng-container>
 
         <ng-container matColumnDef="ultime">
-          <th mat-header-cell *matHeaderCellDef> Ultime tre </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Ultime tre </th>
           <td mat-cell *matCellDef="let squadra">
             <ng-container *ngFor="let res of squadra.ultime">
               <ng-container [ngSwitch]="res">
@@ -283,58 +283,58 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
       <h1 class="mat-h3">Girone B</h1>
-      <table mat-table [dataSource]="gironeBF">
+      <table mat-table matSort [dataSource]="gironeBF">
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
 
         <ng-container matColumnDef="squadra">
-          <th mat-header-cell *matHeaderCellDef> Squadra </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Squadra </th>
           <td mat-cell *matCellDef="let squadra">
             <span><img src="{{squadra.logo}}" style="height: 30px;" alt="logo"></span><span style="vertical-align: super !important;">{{squadra.nome}}</span>
           </td>        </ng-container>
 
         <ng-container matColumnDef="pg">
-          <th mat-header-cell *matHeaderCellDef>Partite giocate</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Partite giocate</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.pg}} </td>
         </ng-container>
 
         <ng-container matColumnDef="v">
-          <th mat-header-cell *matHeaderCellDef>Vittorie</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Vittorie</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.v}} </td>
         </ng-container>
 
         <ng-container matColumnDef="p">
-          <th mat-header-cell *matHeaderCellDef>Pareggi</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Pareggi</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.p}} </td>
         </ng-container>
 
         <ng-container matColumnDef="s">
-          <th mat-header-cell *matHeaderCellDef>Sconfitte</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Sconfitte</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.s}} </td>
         </ng-container>
 
         <ng-container matColumnDef="gf">
-          <th mat-header-cell *matHeaderCellDef>Gol Fatti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gol Fatti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gf}} </td>
         </ng-container>
 
         <ng-container matColumnDef="gs">
-          <th mat-header-cell *matHeaderCellDef>Gol Subiti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gol Subiti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gs}} </td>
         </ng-container>
 
         <ng-container matColumnDef="dg">
-          <th mat-header-cell *matHeaderCellDef>Differenza reti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Differenza reti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.gf - squadra.gs}} </td>
         </ng-container>
 
         <ng-container matColumnDef="pt">
-          <th mat-header-cell *matHeaderCellDef>Punti</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Punti</th>
           <td mat-cell *matCellDef="let squadra"> {{squadra.pt}} </td>
         </ng-container>
 
         <ng-container matColumnDef="ultime">
-          <th mat-header-cell *matHeaderCellDef> Ultime tre </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Ultime tre </th>
           <td mat-cell *matCellDef="let squadra">
             <ng-container *ngFor="let res of squadra.ultime">
               <ng-container [ngSwitch]="res">

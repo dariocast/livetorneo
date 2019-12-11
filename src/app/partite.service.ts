@@ -6,10 +6,11 @@ import {Gruppo} from './objects/gruppo';
 
 const apiUrl = 'https://dariocast.altervista.org/fantazama/api/partita/getAll.php';
 const gruppiUrl = 'https://dariocast.altervista.org/fantazama/api/gruppo/getGruppi.php';
+const gironiUrl = 'https://dariocast.altervista.org/fantazama/api/gruppo/getGruppiGirone.php';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'text/plain'
-  })
+  }),
 };
 
 @Injectable({providedIn: 'root'})
@@ -25,5 +26,14 @@ export class PartiteService {
 
   getGruppi() {
     return this.http.get<Gruppo[]>(gruppiUrl, httpOptions);
+  }
+
+  getGruppiPerGirone(girone: string) {
+    const params = new URLSearchParams();
+    params.append('girone', girone);
+    const headers = new HttpHeaders({
+      'Content-Type':  'text/plain'
+    });
+    return this.http.get<Gruppo[]>(gironiUrl, {headers, params: {girone}});
   }
 }
