@@ -12,7 +12,7 @@ import { ClassificaComponent } from './classifica/classifica.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'live', component: HomeComponent },
+  { path: 'partite', component: HomeComponent },
   { path: 'dettaglio', component: DettaglioComponent },
   { path: 'classifica', component: ClassificaComponent }
 ];

@@ -10,7 +10,7 @@ import {Partita} from './objects/partita';
 })
 export class AppComponent {
   navLinks = [
-    { label: 'Live', path: '/live' },
+    { label: 'Partite', path: '/partite' },
     { label: 'Classifica', path: '/classifica' }
   ];
 }
