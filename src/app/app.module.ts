@@ -11,7 +11,7 @@ import { DettaglioComponent } from './dettaglio/dettaglio.component';
 import { ClassificaComponent } from './classifica/classifica.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/partite', pathMatch: 'full' },
   { path: 'partite', component: HomeComponent },
   { path: 'dettaglio', component: DettaglioComponent },
   { path: 'classifica', component: ClassificaComponent }
