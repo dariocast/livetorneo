@@ -3,10 +3,12 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Partita} from './objects/partita';
 import {Observable} from 'rxjs';
 import {Gruppo} from './objects/gruppo';
+import {Marcatore} from './objects/marcatore';
 
 const apiUrl = 'https://dariocast.altervista.org/fantazama/api/partita/getAll.php';
 const gruppiUrl = 'https://dariocast.altervista.org/fantazama/api/gruppo/getGruppi.php';
 const gironiUrl = 'https://dariocast.altervista.org/fantazama/api/gruppo/getGruppiGirone.php';
+const giocatoriUrl = 'https://dariocast.altervista.org/fantazama/api/giocatore/getAll.php';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'text/plain'
@@ -15,9 +17,12 @@ const httpOptions = {
 
 @Injectable({providedIn: 'root'})
 export class PartiteService {
-  partiteArray: Observable<Partita[]>;
 
   constructor(private http: HttpClient) {
+  }
+
+  getMarcatori() {
+    return this.http.get<Marcatore[]>(giocatoriUrl, httpOptions);
   }
 
   getPartite() {

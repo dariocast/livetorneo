@@ -11,6 +11,7 @@ import {Partita} from './objects/partita';
 export class AppComponent {
   navLinks = [
     { label: 'Partite', path: '/partite' },
-    { label: 'Classifica', path: '/classifica' }
+    { label: 'Classifica', path: '/classifica' },
+    { label: 'Statistiche', path: '/statistica' }
   ];
 }

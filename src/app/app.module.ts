@@ -9,12 +9,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { DettaglioComponent } from './dettaglio/dettaglio.component';
 import { ClassificaComponent } from './classifica/classifica.component';
+import { StatisticaComponent } from './statistica/statistica.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/partite', pathMatch: 'full' },
   { path: 'partite', component: HomeComponent },
   { path: 'dettaglio', component: DettaglioComponent },
-  { path: 'classifica', component: ClassificaComponent }
+  { path: 'classifica', component: ClassificaComponent },
+  { path: 'statistica', component: StatisticaComponent }
 ];
 
 @NgModule({
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     DettaglioComponent,
-    ClassificaComponent
+    ClassificaComponent,
+    StatisticaComponent
   ],
   imports: [
     BrowserModule,
