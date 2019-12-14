@@ -2,7 +2,7 @@
   <mat-expansion-panel *ngFor="let partita of partite | async" [class.selected]="partita === selezionata" (click)="onSelect(partita)">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{partita.squadraUno}} - {{partita.squadraDue}}
+        {{partita.squadraUno}} <br> {{partita.squadraDue}}
       </mat-panel-title>
       <mat-panel-description>
         {{partita.golSquadraUno}}:{{partita.golSquadraDue}}
