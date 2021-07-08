@@ -16,3 +16,25 @@ img {
   margin: 0 5px 0 0;
 }
 
+.example-container {
+  height: 400px;
+  width: 550px;
+  overflow: auto;
+}
+
+table {
+  width: 800px;
+}
+
+.mat-cell {
+  text-align: center;
+}
+
+th.mat-column-squadra {
+  padding-left: 8px;
+  padding-right: 3px;
+}
+
+td.mat-column-squadra {
+  text-align: left;
+}

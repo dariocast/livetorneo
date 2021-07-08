@@ -8,7 +8,7 @@ import {Marcatore} from './objects/marcatore';
 const apiUrl = 'https://dariocast.altervista.org/fantazama/api/partita/getAll.php';
 const gruppiUrl = 'https://dariocast.altervista.org/fantazama/api/gruppo/getGruppi.php';
 const gironiUrl = 'https://dariocast.altervista.org/fantazama/api/gruppo/getGruppiGirone.php';
-const giocatoriUrl = 'https://dariocast.altervista.org/fantazama/api/giocatore/getOrdered.php';
+const giocatoriUrl = 'https://dariocast.altervista.org/fantazama/api/admin/getMarcatori.php';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'text/plain'
